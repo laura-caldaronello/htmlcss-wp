@@ -1,4 +1,4 @@
-/* in questo bonus provo a fare le cose in modo diverso per quanto riguarda la centratura verticale di "leadership" + provo a mettere fixed l'header */
+/* in questo bonus provo a fare le cose in modo diverso per quanto riguarda la centratura verticale di "leadership" (si veda .top e .text_container) + provo a mettere fixed l'header */
 
 * {
   margin: 0;
@@ -36,9 +36,13 @@ main > :not(:last-child) {
 }
 
 header {
-  position: relative;
-  width: 100%;
+  position: fixed;
+  width: 100vw;
   height: 10vh;
+  padding-top: 1vh;
+  padding-left: 5vw;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 1;
 }
 header img {
   display: block;   /* nb: senza display block se andavo a diminuire molto l'altezza della finestra l'immagine andava per conto suo. è una caratteristica dell'inline-block? */
@@ -59,6 +63,7 @@ header li {
 
 main {
   width: 100%;
+  margin-top: 10vh;
 }
 
 /* inizio prima section */
@@ -98,16 +103,16 @@ section:last-child {
   width: 100%;
 }
 .top {
-  position: relative;
   float: left;
   width: 100%;
-  min-height: 10vh;
+  height: 10vh;
   margin-bottom: 1vh;
+  line-height: 10vh;
 }
 .text_container {
-  position: absolute;
-  top: 50%;
-  transform: translate(0,-50%);
+  display: inline-block;
+  line-height: 1.5em;
+  vertical-align: middle;
 }
 .text_container h1 {
   font-weight: 900;
