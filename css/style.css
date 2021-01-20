@@ -24,20 +24,64 @@ main > :not(:last-child) {
 }
 
 header {
+  position: relative;
   width: 100%;
   height: 10vh;
   background-color: rgb(229 121 230);
+}
+header img {
+  display: block;   /* nb: senza display block se andavo a diminuire molto l'altezza della finestra l'immagine andava per conto suo. è una caratteristica dell'inline-block? */
+  height: 50%;
+}
+header ul {
+  position: absolute;
+  top: 75%; /* poco elegante */
+  transform: translate(0,-50%);
+  list-style: none;
+}
+header li {
+  float: left;   /* ho provato a mettere inline block ma succede la stessa cosa di quello che ho scritto in header img */
+  margin-right: 2vh;   /* metto un margine orizzontale in proporzione a vh solo perchè mi piace l'effetto estetico di uniformità ma sono consapevole che è diverso da vw */
+  font-size: 1vh;
 }
 
 main {
   width: 100%;
 }
 
+/* inizio prima section */
+
 section:first-child {
+  position: relative;
   width: 100%;
   height: 30vh;
   background-color: rgb(225 214 122);
 }
+main img,
+.layover {
+  width: 100%;
+  height: 100%;
+  border-radius: 1vh;
+}
+main img {
+  object-fit: cover;
+}
+.layover {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0,0.2);
+}
+section:first-child .text {
+  position: absolute;
+  max-width: 50%;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+}
+
+/* fine prima section */
+
+/* inizio seconda section */
 
 section:last-child {
   width: 100%;
@@ -47,23 +91,37 @@ section:last-child > * {
   background-color: rgb(171 207 231);
 }
 .top {
+  position: relative;
+  float: left;
   width: 100%;
   min-height: 10vh;
   margin-bottom: 1vh;
-  float: left;
+}
+.text_container {
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-50%);
 }
 section:last-child > :not(.top) {
-  min-height: 35vh;
+  position: relative;
   float: left;
+  min-height: 35vh;
   margin-bottom: 1vh;
 }
 .left, .right {
   width: 20%;
 }
+section:last-child .img_container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
 .center {
   width: calc(100% - (20% + 20% + 2vh));
   margin: 0 1vh;
 }
+
+/* fine seconda section */
 
 footer {
   width: 100%;
