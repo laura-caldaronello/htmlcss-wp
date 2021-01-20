@@ -12,6 +12,13 @@
   clear: both;
 }
 
+.centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
 .container {
   width: 90vw;
   margin: 0 auto;
@@ -111,19 +118,23 @@ section:last-child > :not(.top) {
 .left, .right {
   width: 20%;
 }
+.center {
+  width: calc(100% - (20% + 20% + 2vh));
+  margin: 0 1vh;
+}
 section:last-child .img_container {
   position: relative;
   height: 200px;
   width: 100%;
 }
-.center {
-  width: calc(100% - (20% + 20% + 2vh));
-  margin: 0 1vh;
+section:last-child h3 {
+  margin-top: 1vh;
 }
 
 /* fine seconda section */
 
 footer {
+  position: relative;
   width: 100%;
   height: calc(100vh - (10vh + 30vh + 10vh + 35vh + 7vh));
   background-color: rgb(136 1 254);
