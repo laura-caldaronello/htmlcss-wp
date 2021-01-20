@@ -58,7 +58,7 @@ header li {
   float: left;   /* ho provato a mettere inline block ma succede la stessa cosa di quello che ho scritto in header img */
   margin-right: 2vh;   /* metto un margine orizzontale in proporzione a vh solo perchè mi piace l'effetto estetico di uniformità ma sono consapevole che è diverso da vw */
   font-size: 0.8em;
-  color: grey;
+  color: white;
 }
 
 main {
